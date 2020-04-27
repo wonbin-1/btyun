@@ -170,14 +170,13 @@ REST API
     "time":1587977106463,
     "data":[
         {
-            "symbol":12,
-            "count1":4,
-            "count2":4,
-            "mapping":"YO_USDT"
+            "symbol":12,//交易对ID
+            "count1":4,//数量小数位
+            "count2":4,//金额小数位
+            "mapping":"YO_USDT"//交易对别名
         }
         ...
     ]
 }
 ```
-|
 ---
