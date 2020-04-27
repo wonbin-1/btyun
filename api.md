@@ -14,7 +14,7 @@
         - [限流 - REST API](#b4)
 - [业务API参考](#b5)
   - [open-api](#b6)
-    -   [资产余额](#1)
+    -   [获取所有交易对](#1)
 
 ---
 
@@ -145,10 +145,10 @@ REST API
 ##  <span id="b6">open-api</span>
 
 
-### <span id="1">资产余额</span>
+### <span id="1">获取所有的交易对</span>
 
-1. 接口地址: /open/api/user/account
-2. 接口说明: (get请求)资产余额
+1. 接口地址: https://www.btyun.me/open/api.html?action=ex_mappings
+2. 接口说明: (get请求)获取所有的交易对
 
 |参数|    填写类型|   说明|
 |--------|--------|--------|
@@ -160,7 +160,20 @@ REST API
 
 |字段|    实例| 解释|
 |--------|--------|--------|
-|code|  0|   |
-|msg|   "suc"|  code>0失败|
-|data|  {<br>"total_asset":432323.23,<br>"coin_list":[<br>{"coin":"btc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"ltc","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>{"coin":"bch","normal":32323.233,"locked":32323.233,"btcValuatin":112.33},<br>]<br>}<br>|total_asset:总资产<br>normal:余额账户<br>locked：冻结账户<br>btcValuatin：BTC估值|
+|code|  200|   |
+|msg|   "success"|  code<0失败|
+|data|  {
+    "code":200,
+    "msg":"获取所有的交易对",
+    "time":1587977106463,
+    "data":[
+        {
+            "symbol":12,
+            "count1":4,
+            "count2":4,
+            "mapping":"YO_USDT"
+        }
+        ...
+    ]
+}|total_asset:总资产<br>normal:余额账户<br>locked：冻结账户<br>btcValuatin：BTC估值|
 ---
