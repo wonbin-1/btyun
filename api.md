@@ -162,7 +162,7 @@ REST API
 |--------|--------|--------|
 |code|  200|   |
 |msg|   "success"|  code<0失败|
-|data|  {
+|data|如下|{
     "code":200,
     "msg":"获取所有的交易对",
     "time":1587977106463,
@@ -175,5 +175,5 @@ REST API
         }
         ...
     ]
-}|total_asset:总资产<br>normal:余额账户<br>locked：冻结账户<br>btcValuatin：BTC估值|
+}|
 ---
