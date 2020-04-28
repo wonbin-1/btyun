@@ -455,3 +455,53 @@ REST API
 }
 ```
 ---
+
+
+---
+
+### <span id="9">获取当前委托</span>
+
+1. 接口地址: https://www.btyun.me/open/api.html?action=cancel_order
+2. 接口说明: (get请求)根据交易对ID，获取未完成的委托单
+
+|参数|    填写类型|   说明|
+|--------|--------|--------|
+|api_key|   必填| api_key|
+|time|  必填| 时间戳|
+|symbol|  必填| 交易对ID|
+|currentPage|  必填| 当前页，第一次调用传1|
+|sign|  必填| 签名|
+
+返回值:
+
+|字段|    实例| 解释|
+|--------|--------|--------|
+|code|  0|   |
+|msg|   "success"|  code<0失败|
+|data|如下|
+```
+{
+    "code":200,
+    "msg":"查询当前委单",
+    "time":1588039859811,
+    "totalPage":285,//总页数
+    "currentPage":1,//当前页
+    "data":[
+        {
+            "price":"175.0000",//委托价格
+            "count":"0.9889",//委托数量
+            "success_count":"0.1281",//已成交数量
+            "amount":"173.0575",//委托金额
+            "success_amount":"21.9580",//已成交金额
+            "type":0,//类型
+            "type_s":"买入",
+            "status":2,//状态
+            "status_s":"部分成交",
+            "id":1501018,//订单ID
+            "create_time":"2020-04-22 18:21:38"//委托时间
+        }
+        ...
+    ]
+}
+```
+---
