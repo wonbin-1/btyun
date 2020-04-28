@@ -461,7 +461,7 @@ REST API
 
 ### <span id="9">获取当前委托</span>
 
-1. 接口地址: https://www.btyun.me/open/api.html?action=cancel_order
+1. 接口地址: https://www.btyun.me/open/api.html?action=get_open_orders
 2. 接口说明: (get请求)根据交易对ID，获取未完成的委托单
 
 |参数|    填写类型|   说明|
@@ -501,6 +501,52 @@ REST API
             "create_time":"2020-04-22 18:21:38"//委托时间
         }
         ...
+    ]
+}
+```
+---
+
+
+---
+
+### <span id="10">获取订单详情</span>
+
+1. 接口地址: https://www.btyun.me/open/api.html?action=get_order_details
+2. 接口说明: (get请求)根据订单ID，获取订单的详情
+
+|参数|    填写类型|   说明|
+|--------|--------|--------|
+|api_key|   必填| api_key|
+|time|  必填| 时间戳|
+|order_id|  必填| 订单ID|
+|sign|  必填| 签名|
+
+返回值:
+
+|字段|    实例| 解释|
+|--------|--------|--------|
+|code|  0|   |
+|msg|   "success"|  code<0失败|
+|data|如下|
+```
+{
+    "code":200,
+    "msg":"根本id查委托订单详细信息",
+    "time":1588040299427,
+    "data":[
+        {
+            "price":"161.1523",//委托单价
+            "count":"0.3296",//委托数量
+            "success_count":"0.0000",//已成交数量
+            "amount":"53.1157",//总金额
+            "success_amount":"0.0000",//已成交金额
+            "type":0,//类型
+            "type_s":"买入",
+            "status":1,//状态
+            "status_s":"未成交",
+            "id":1610313,//订单ID
+            "create_time":"2020-04-23 09:32:22"//委托时间
+        }
     ]
 }
 ```
