@@ -551,3 +551,52 @@ REST API
 }
 ```
 ---
+
+---
+
+### <span id="11">获取成交委单记录</span>
+
+1. 接口地址: https://www.btyun.me/open/api.html?action=get_order_history
+2. 接口说明: (get请求)获取最近有成交的委托记录
+
+|参数|    填写类型|   说明|
+|--------|--------|--------|
+|api_key|  必填| api_key|
+|time|  必填| 时间戳|
+|symbol|  必填| 交易对ID|
+|currentPage|  必填| 当前页，第一次调用传1|
+|sign|  必填| 签名|
+
+返回值:
+
+|字段|    实例| 解释|
+|--------|--------|--------|
+|code|  0|   |
+|msg|   "success"|  code<0失败|
+|data|如下|
+```
+{
+    "code":200,
+    "msg":"查询成交委单记录",
+    "time":1588040848145,
+    "totalPage":267,
+    "currentPage":1,
+    "data":[
+        {
+            "price":"171.2800",//委托单价
+            "count":"0.8921",//委托数量
+            "success_count":"0.8921",//已成交数量
+            "amount":"152.7988",//委托金额
+            "success_amount":"152.7988",//已成交金额
+            "type":1, //类型
+            "type_s":"卖出",
+            "status":3, //状态
+            "status_s":"完全成交",
+            "id":1467488, //订单ID
+            "create_time":"2020-04-22 12:55:00" //委托时间
+        }
+        ...
+    ]
+}
+```
+---
