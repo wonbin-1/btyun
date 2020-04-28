@@ -391,3 +391,35 @@ REST API
 }
 ```
 ---
+---
+
+### <span id="7">创建订单</span>
+
+1. 接口地址: https://www.btyun.me/open/api.html?action=create_orders
+2. 接口说明: (get请求)创建委托单
+
+|参数|    填写类型|   说明|
+|--------|--------|--------|
+|api_key|   必填| api_key|
+|time|  必填| 时间戳|
+|symbol|  必填| 交易对ID|
+|type|  必填| 委托单类型，0是买入，1是卖出|
+|price|  必填| 委托价格|
+|amount|  必填| 委托数量|
+|sign|  必填| 签名|
+
+返回值:
+
+|字段|    实例| 解释|
+|--------|--------|--------|
+|code|  0|   |
+|msg|   "success"|  code<0失败|
+|data|如下|
+```
+{
+    "code":0,
+    "msg":"下单成功",
+    "orderId":1610383//订单ID
+}
+```
+---
